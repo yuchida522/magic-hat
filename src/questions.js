@@ -8,7 +8,9 @@ const questions = [
 	"What are some of your favorite games to play?",
 	"What takes a lot of time but is totally worth it?",
 	"What is the most amazing fact you know?",
-	"What website or app doesn’t exist, but you really wish it did?"
+	"What website or app doesn’t exist, but you really wish it did?",
+	"What’s your favorite type of day? (weather, temp, etc.)",
+	"What is the most clever or funniest use of advertising you’ve seen?"
 ]
 
 export default questions
