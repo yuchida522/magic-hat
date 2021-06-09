@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');;
+
 .questions {
     height: 200px;
     display: flex;
@@ -5,7 +7,7 @@
 }
 
 .buttons {
-    height: 200px;
+    height: 100px;
     display: flex;
     justify-content: space-around;
 }
@@ -16,14 +18,22 @@
 .inputFields-toggled {
     width: 100%;
 }
-.inputFields-toggled-btns, .inputFields-toggled-input{
+.inputFields-toggled-btns, .inputFields-toggled-input {
     display: flex;
     justify-content: center;
+}
+
+.magic-hat {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 body {
     background-color: #fff5fd;
 }
 
 p {
-    color: pink;
+    color: blue;
+    font-family: 'Amatic SC', cursive;
+    font-size: 50px;
 }

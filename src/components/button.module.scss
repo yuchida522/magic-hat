@@ -1,22 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 .button {
     border-radius: 20px;
     padding: 0.25rem 1em;
     height: 50px;
+    color: white;
+    width: 500px;
+    -webkit-box-shadow: 0 8px 6px -6px #777;
+    -moz-box-shadow: 0 8px 6px -6px #777;
+    box-shadow: 0 8px 6px -6px #777;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    &:hover {
+        opacity: 0.5;
+    }
     &--primary {
         border: solid 2px #af0069;
+        background-color: #af0069;
     }
     &--secondary {
-        border: solid 2px #55b3b1
+        border: solid 2px #55b3b1;
+        background-color: #55b3b1;
     }
     &--light {
         border: solid 2px #f6c065;
+        background-color: #f6c065;
     }
     &--submit {
         border: solid 2px purple;
-        width: 70px;
+        background-color: purple;
+        width: 100px;
+        margin-right: 20px
     }
     &--cancel {
         border: solid 2px red;
-        width: 70px;
+        background-color: red;
+        width: 100px;
+        margin-left: 20px
     }
 }

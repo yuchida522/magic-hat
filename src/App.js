@@ -2,6 +2,8 @@ import { React, useState, useEffect }  from 'react';
 import Button from './components/button'
 import Input from './components/input'
 import Questions from './questions'
+import magicHat from './assets/hat.png'
+
 import './app.css'
 
 function App() {
@@ -69,26 +71,31 @@ function App() {
       <div className="questions">
       <p>{question}</p>
       </div>
+      <div className="magic-hat">
+      <img src={magicHat}/>
+      </div>
       <div className="buttons">
       <Button variant="primary" onClick={() => randomQuestion()}>Give me a question</Button>
       <Button variant="secondary" onClick={() => setToggle(true)}>auto generate questions</Button>
       <Button variant="light" onClick={() => setToggleQuestionInput(true)}>Add my own questions</Button>
       </div>
       <div className="inputFields">
+
       {toggle ?
       (<div className="inputFields-toggled">
         <div className="inputFields-toggled-input">
-        <Input placeholder="in seconds" onChange={(e) => handleTime(e)}/>
+        <Input variant="small-input" placeholder="in seconds" onChange={(e) => handleTime(e)}/>
         </div> <br/>
         <div className="inputFields-toggled-btns">
         <Button variant="submit" onClick={() => setStart(!start)}>{!start ? ("start"): ("stop")}</Button>
-        <Button variant="cancel" onClick={() => cancel()}>cancel</Button>
+        {!start ? (<Button variant="cancel" onClick={() => cancel()}>cancel</Button>) : null}
         </div>
        </div>) : null}
+
       {toggleQuestionInput ? 
       (<div className="inputFields-toggled">
       <div className="inputFields-toggled-input">
-      <Input onChange={(e) => handleInput(e)} placeholder="ex. what is your darkest secret?"></Input><br/>
+      <Input variant="large-input" onChange={(e) => handleInput(e)} placeholder="ex. what is your darkest secret?"></Input><br/>
       </div>
       <div className="inputFields-toggled-btns">
       <Button variant="submit" onClick={() => addQuestion()}>Add</Button>
