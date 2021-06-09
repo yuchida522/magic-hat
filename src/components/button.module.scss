@@ -5,12 +5,12 @@
     padding: 0.25rem 1em;
     height: 50px;
     color: white;
-    width: 500px;
+    width: 25%;
     -webkit-box-shadow: 0 8px 6px -6px #777;
     -moz-box-shadow: 0 8px 6px -6px #777;
     box-shadow: 0 8px 6px -6px #777;
     font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     &:hover {
         opacity: 0.5;
     }
@@ -27,14 +27,14 @@
         background-color: #f6c065;
     }
     &--submit {
-        border: solid 2px purple;
-        background-color: purple;
+        border: solid 2px #34344c;
+        background-color: #34344c;
         width: 100px;
         margin-right: 20px
     }
     &--cancel {
-        border: solid 2px red;
-        background-color: red;
+        border: solid 2px #ed4596;
+        background-color: #ed4596;
         width: 100px;
         margin-left: 20px
     }

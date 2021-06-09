@@ -1,17 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 .input {
     height: 50px;
     border-radius: 20px;
+    border: solid 1px lightgrey;
+    font-size: 2rem;
+    padding: 2px 20px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
     &:focus {
         outline: none;
     }
     &::placeholder {
-        font-size: large;
+        font-size: 2rem;
+        vertical-align: center;
+        font-family: 'Open Sans', sans-serif;
     }
     &--small-input {
         width: 10%;
     }
     &--large-input {
-        width: 60%;
+        width: 50%;
         margin-bottom: 20px;
     }
 }
