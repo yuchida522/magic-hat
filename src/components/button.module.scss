@@ -1,0 +1,22 @@
+.button {
+    border-radius: 20px;
+    padding: 0.25rem 1em;
+    height: 50px;
+    &--primary {
+        border: solid 2px #af0069;
+    }
+    &--secondary {
+        border: solid 2px #55b3b1
+    }
+    &--light {
+        border: solid 2px #f6c065;
+    }
+    &--submit {
+        border: solid 2px purple;
+        width: 70px;
+    }
+    &--cancel {
+        border: solid 2px red;
+        width: 70px;
+    }
+}

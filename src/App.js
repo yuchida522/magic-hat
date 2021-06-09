@@ -2,6 +2,7 @@ import { React, useState, useEffect }  from 'react';
 import Button from './components/button'
 import Input from './components/input'
 import Questions from './questions'
+import './app.css'
 
 function App() {
 
@@ -14,7 +15,6 @@ function App() {
   const [start, setStart] = useState(false)
   const [newQuestion, setNewQuestion] = useState('')
 
-  console.log(icebreakers)
   function randomNumber(){
     const randomNum = Math.floor(Math.random() * icebreakers.length)
     if (randomNumbers.length === icebreakers.length) {
@@ -59,28 +59,43 @@ function App() {
     const newQuestion = e.target.value
     setNewQuestion(newQuestion)
   }
-  
+
   function addQuestion(){
     setIceBreakers([...icebreakers, newQuestion]);
   }
 
   return (
     <div className="App">
+      <div className="questions">
       <p>{question}</p>
-      <Button onClick={() => randomQuestion()}>Give me a question</Button>
-      <Button onClick={() => setToggle(true)}>auto generate questions</Button>
+      </div>
+      <div className="buttons">
+      <Button variant="primary" onClick={() => randomQuestion()}>Give me a question</Button>
+      <Button variant="secondary" onClick={() => setToggle(true)}>auto generate questions</Button>
+      <Button variant="light" onClick={() => setToggleQuestionInput(true)}>Add my own questions</Button>
+      </div>
+      <div className="inputFields">
       {toggle ?
-      (<div>
-        <Input placeholder="in seconds" onChange={(e) => handleTime(e)}/> <br/>
-        <Button onClick={() => setStart(!start)}>{!start ? ("start"): ("stop")}</Button>
-        <Button onClick={() => cancel()}>cancel</Button>
+      (<div className="inputFields-toggled">
+        <div className="inputFields-toggled-input">
+        <Input placeholder="in seconds" onChange={(e) => handleTime(e)}/>
+        </div> <br/>
+        <div className="inputFields-toggled-btns">
+        <Button variant="submit" onClick={() => setStart(!start)}>{!start ? ("start"): ("stop")}</Button>
+        <Button variant="cancel" onClick={() => cancel()}>cancel</Button>
+        </div>
        </div>) : null}
-      <Button onClick={() => setToggleQuestionInput(true)}>Add my own questions</Button>
       {toggleQuestionInput ? 
-      (<div><Input onChange={(e) => handleInput(e)} placeholder="ex. what is your darkest secret?"></Input>
-      <Button onClick={() => addQuestion()}>Add</Button>
-      <Button onClick={() => setToggleQuestionInput(false)}>close</Button>
+      (<div className="inputFields-toggled">
+      <div className="inputFields-toggled-input">
+      <Input onChange={(e) => handleInput(e)} placeholder="ex. what is your darkest secret?"></Input><br/>
+      </div>
+      <div className="inputFields-toggled-btns">
+      <Button variant="submit" onClick={() => addQuestion()}>Add</Button>
+      <Button variant="cancel" onClick={() => setToggleQuestionInput(false)}>close</Button>
+      </div>
       </div>) : null}
+      </div>
     </div>
   );
 }

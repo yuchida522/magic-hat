@@ -1,0 +1,29 @@
+.questions {
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons {
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.inputFields {
+    flex-direction: column;
+}
+.inputFields-toggled {
+    width: 100%;
+}
+.inputFields-toggled-btns, .inputFields-toggled-input{
+    display: flex;
+    justify-content: center;
+}
+body {
+    background-color: #fff5fd;
+}
+
+p {
+    color: pink;
+}
