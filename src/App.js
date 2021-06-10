@@ -26,7 +26,7 @@ function App() {
     const randomNum = Math.floor(Math.random() * icebreakers.length)
     if (randomNumbers.length === icebreakers.length) {
       setRandomNumbers([])
-      setMessage("You've gone through all the questions! Click the question button to start over")
+      setMessage("You've gone through all the questions! Click the hat to start over")
     } else if (randomNumbers.includes(randomNum)){
       return randomNumber()
     } else {
@@ -34,14 +34,13 @@ function App() {
       return randomNum
     }
   };
-  
   //generates random question using random number
   function randomQuestion(){
 		const randomNum = randomNumber();
     setQuestion(icebreakers[randomNum]);
 	};
 
-  //takes user input to convert seconds into miliseconds
+  //takes user input to convert seconds into miliseconds c
   function handleTime(e){
     const timeInSeconds = (e.target.value) * 1000
     setTime(timeInSeconds)
@@ -77,6 +76,7 @@ function App() {
     setTime(0)
     setQuestion('')
     setErrorMessage('')
+    setMessage('')
   };
   
   //closes question input and clears out states
@@ -84,6 +84,7 @@ function App() {
     setToggleQuestionInput(false)
     setNewQuestion('')
     setMessage('')
+    setErrorMessage('')
   };
 
   //handles new question input from user
@@ -113,17 +114,13 @@ function App() {
         </div>
       )
       :
-      (<div className="fadeIn">
+      (<div className="fade-in">
+      {question ? (
       <div className="questions">
-      {question ? (<p>{question}</p>) : (<p className="done">{message}</p>)}
-      </div>
+      <p>{question}</p></div>) : (<p className="done">Click the magic hat to get questions!</p>)}
+      {!question ? (<p className="done">{message}</p>) : null}
       <div className="magic-hat">
-      <img src={magicHat}/>
-      </div>
-      <div className="buttons">
-      <Button variant="primary" onClick={() => randomQuestion()}>Give me a question</Button>
-      <Button variant="secondary" onClick={() => setToggle(true)}>Auto generate questions</Button>
-      <Button variant="light" onClick={() => setToggleQuestionInput(true)}>Add my own questions</Button>
+      <img onClick={() => randomQuestion()} src={magicHat}/>
       </div>
       <div className="inputFields">
       {toggle ?
@@ -154,7 +151,13 @@ function App() {
       </div>
       </div>) : null}
       </div>
-      </div>)}
+      
+      <div className="buttons">
+      <Button variant="secondary" onClick={() => setToggle(true)}>Autogenerate questions</Button>
+      <Button variant="light" onClick={() => setToggleQuestionInput(true)}>Add my own questions</Button>
+      </div>
+      </div>
+      )}
       
     </div>
   );
