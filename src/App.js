@@ -8,6 +8,7 @@ import './app.css'
 
 function App() {
 
+  //hooks
   const [play, setPlay] = useState(false)
   const [question, setQuestion] = useState('')
   const [icebreakers, setIceBreakers] = useState(Questions)
@@ -20,7 +21,7 @@ function App() {
   const [errorMessage, setErrorMessage] = useState('')
   const [message, setMessage] = useState('')
 
-
+  //generates random number
   function randomNumber(){
     const randomNum = Math.floor(Math.random() * icebreakers.length)
     if (randomNumbers.length === icebreakers.length) {
@@ -34,16 +35,19 @@ function App() {
     }
   };
   
+  //generates random question using random number
   function randomQuestion(){
 		const randomNum = randomNumber();
     setQuestion(icebreakers[randomNum]);
 	};
 
+  //takes user input to convert seconds into miliseconds
   function handleTime(e){
     const timeInSeconds = (e.target.value) * 1000
     setTime(timeInSeconds)
   };
- console.log(time)
+ 
+  //error handling on user input for time
   function startTimer(){
     if (time === 0){
       setErrorMessage("You must enter a time")
@@ -53,34 +57,42 @@ function App() {
       setErrorMessage('')
     }
   }
+  //starts time intervals to generate random question, clears out time interval when stopped
   useEffect(() => {
     let interval
     if (start) {
+      randomQuestion()
       interval = setInterval(randomQuestion, time);
     } else if (!start && time !== 0){
       clearInterval(interval);
     }
-    return () => clearInterval(interval)
+    return () => 
+      clearInterval(interval);
   }, [start, time])
 
+  //closes time interval input and clears out states
   function cancel(){
     setStart(false)
     setToggle(false)
     setTime(0)
     setQuestion('')
+    setErrorMessage('')
   };
   
+  //closes question input and clears out states
   function close(){
     setToggleQuestionInput(false)
     setNewQuestion('')
     setMessage('')
   };
 
+  //handles new question input from user
   function handleInput(e){
     const newQuestion = e.target.value
     setNewQuestion(newQuestion)
   }
 
+  //adds question to the icebreaker question bank, it does not save permanently so intended for adding questions on the fly
   function addQuestion(){
     if (!newQuestion){
       setErrorMessage('You must enter a question')
@@ -96,12 +108,12 @@ function App() {
       {!play ? (
         <div className="header">
         <h1>Magic Hat</h1>
-        <h4>an icebreaker game</h4>
+        <h4>Get to know your team better with these icebreakers</h4>
         <Button variant="primary" onClick={()=> setPlay(true)}>Play</Button>
         </div>
       )
       :
-      (<div>
+      (<div className="fadeIn">
       <div className="questions">
       {question ? (<p>{question}</p>) : (<p className="done">{message}</p>)}
       </div>

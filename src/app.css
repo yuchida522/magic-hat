@@ -1,16 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans&display=swap');
 
+/* header css */
 .header {
     text-align: center;
 }
 
 h1 {
     font-family: 'Amatic SC', cursive;
-    font-size: 200px;
+    font-size: 10vw;
+}
+@media screen and (max-width: 992px) {
+    h1 {
+        font-size: 8rem;
+    }
 }
 
 h4 {
     font-family: 'Open Sans', sans-serif;
+    font-size: 5vw;
+}
+
+/* questions css */
+.questions {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+@media screen and (max-width: 992px) {
+    .questions {
+        height: 20%
+    }
+}
+
+
+/* button responsiveness */
+.buttons {
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 992px) {
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* input fields responsiveness */
+.inputFields {
+    flex-direction: column;
+}
+.inputFields-toggled {
+    width: 100%;
+}
+.inputFields-toggled-btns, .inputFields-toggled-input, .message {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+/* hat image css */
+.magic-hat {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+img {
+    width: 40%
+}
+
+@media screen and (max-width: 992px) {
+    img {
+        width: 80%;
+    }
+}
+
+body {
+    background-color: #fff5fd;
+}
+
+p {
+    color: #32314c;
+    font-family: 'Amatic SC', cursive;
+    font-size: 5vw;
+}
+@media screen and (max-width: 992px) {
+    p {
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+/* messages css */
+.error {
+    color: #ed4596;
+    font-size: 20px;
+}
+
+.done {
+    color: #ed4596;
     font-size: 50px;
 }
 
@@ -22,56 +114,7 @@ h4 {
         opacity: 1;
     }
 }
-.questions {
-    height: 200px;
-    display: flex;
-    justify-content: center;
-}
-
 .fadeIn {
-    animation: fadeIn ease-in 3;
-    animation-fill-mode: forwards;
+    animation: fadeIn;
     animation-duration: 1s;
-}
-.buttons {
-    height: 100px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.inputFields {
-    flex-direction: column;
-}
-.inputFields-toggled {
-    width: 100%;
-}
-.inputFields-toggled-btns, .inputFields-toggled-input, .message {
-    display: flex;
-    justify-content: center;
-}
-
-.magic-hat {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
-}
-body {
-    background-color: #fff5fd;
-}
-
-
-p {
-    color: #32314c;
-    font-family: 'Amatic SC', cursive;
-    font-size: 80px;
-}
-
-.error {
-    color: #ed4596;
-    font-size: 20px;
-}
-
-.done {
-    color: #ed4596;
-    font-size: 50px;
 }

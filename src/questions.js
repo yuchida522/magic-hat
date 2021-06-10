@@ -10,7 +10,29 @@ const questions = [
 	"What is the most amazing fact you know?",
 	"What website or app doesn’t exist, but you really wish it did?",
 	"What’s your favorite type of day? (weather, temp, etc.)",
-	"What is the most clever or funniest use of advertising you’ve seen?"
+	"What is the most clever or funniest use of advertising you’ve seen?",
+	"How into self-improvement are you?",
+	"When someone finds out what you do, or where you are from, what question do they always ask you?",
+	"Are you more productive at night or in the morning? Do you think it’s possible to change and get used to another schedule?",
+	"What scene in a movie always gives you goosebumps every time you watch it?",
+	"What topic could you give a 20-minute presentation on without any preparation?",
+	"What’s something that a lot of people are missing out on because they don’t know about it?",
+	"What are some of your guilty pleasures?",
+	"Who is the most interesting person you’ve met and talked with?",
+	"What has really taken a toll on you?",
+	"How did you spend the money from your very first job?",
+	"What do you wish someone taught you a long time ago?",
+	"Do you think you rely too heavily on your phone? Why or why not?",
+	"How could carousels be spiced up so they are more exciting?",
+	"What’s your favorite car that you’ve owned?",
+	"What subjects should be taught in school but aren’t?",
+	"What’s the biggest vehicle you’ve driven?",
+	"What songs would be played on a loop in hell?",
+	"What rule do you wish they would introduce into your favorite sport?",
+	"What kind of challenges are you facing these days?",
+	"What do you highly recommend to most people you meet?",
+	"Do you think you have a pretty good work-life balance? Why or why not?",
+	"What was the last thing you were really excited about?"
 ]
 
 export default questions

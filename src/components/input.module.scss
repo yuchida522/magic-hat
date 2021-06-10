@@ -12,15 +12,29 @@
         outline: none;
     }
     &::placeholder {
-        font-size: 2rem;
+        font-size: 1.25rem;
         vertical-align: center;
         font-family: 'Open Sans', sans-serif;
     }
     &--small-input {
         width: 10%;
+        @media screen and (max-width: 992px) {
+            margin-top: 10px;
+            width: 40%;
+            &::placeholder {
+                font-size: 1.5rem;
+            }
+        }
     }
     &--large-input {
         width: 50%;
         margin-bottom: 20px;
+        @media screen and (max-width: 992px) {
+            margin-top: 10px;
+            width: 80%;
+            &::placeholder {
+                font-size: 1.5rem;
+            }
+        }
     }
 }
