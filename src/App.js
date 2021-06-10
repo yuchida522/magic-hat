@@ -18,7 +18,7 @@ function App() {
   const [time, setTime] = useState(0)
   const [start, setStart] = useState(false)
   const [newQuestion, setNewQuestion] = useState('')
-  const [errorMessage, setErrorMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState({})
   const [message, setMessage] = useState('')
 
   //generates random number
@@ -26,13 +26,13 @@ function App() {
     const randomNum = Math.floor(Math.random() * icebreakers.length)
     if (randomNumbers.length === icebreakers.length) {
       setRandomNumbers([])
-      setMessage("You've gone through all the questions! Click the hat to start over")
+      setMessage("You've gone through all the questions! Click the hat to start over");
     } else if (randomNumbers.includes(randomNum)){
-      return randomNumber()
+      return randomNumber();
     } else {
       setRandomNumbers([...randomNumbers, randomNum])
       return randomNum
-    }
+    };
   };
   //generates random question using random number
   function randomQuestion(){
@@ -49,13 +49,14 @@ function App() {
   //error handling on user input for time
   function startTimer(){
     if (time === 0){
-      setErrorMessage("You must enter a time")
-      return
+      setErrorMessage({'time': "You must enter a time"})
+      console.log(errorMessage)
+      return;
     } else {
       setStart(!start)
       setErrorMessage('')
     }
-  }
+  };
   //starts time intervals to generate random question, clears out time interval when stopped
   useEffect(() => {
     let interval
@@ -67,7 +68,7 @@ function App() {
     }
     return () => 
       clearInterval(interval);
-  }, [start, time])
+  }, [start, time]);
 
   //closes time interval input and clears out states
   function cancel(){
@@ -91,18 +92,18 @@ function App() {
   function handleInput(e){
     const newQuestion = e.target.value
     setNewQuestion(newQuestion)
-  }
+  };
 
   //adds question to the icebreaker question bank, it does not save permanently so intended for adding questions on the fly
   function addQuestion(){
     if (!newQuestion){
-      setErrorMessage('You must enter a question')
-      return
+      setErrorMessage({'newQuestion': 'You must enter a question'})
+      return;
     } else {
-      setErrorMessage('Question added!')
+      setErrorMessage({'newQuestion': 'Question added!'})
       setIceBreakers([...icebreakers, newQuestion]);
     }
-  }
+  };
 
   return (
     <div className="App">
@@ -133,7 +134,7 @@ function App() {
         {!start ? (<Button variant="cancel" onClick={() => cancel()}>cancel</Button>) : null}
         </div>
         <div className="message"> 
-        {errorMessage ? (<p className="error">{errorMessage}</p>) : null}
+        {errorMessage.time ? (<p className="error">{errorMessage.time}</p>) : null}
         </div>
        </div>) : null}
 
@@ -147,7 +148,7 @@ function App() {
       <Button variant="cancel" onClick={() => close()}>close</Button>
       </div>
       <div className="message"> 
-      {errorMessage ? (<p className="error">{errorMessage}</p>) : null}
+      {errorMessage.newQuestion ? (<p className="error">{errorMessage.newQuestion}</p>) : null}
       </div>
       </div>) : null}
       </div>
@@ -161,6 +162,6 @@ function App() {
       
     </div>
   );
-}
+};
 
 export default App;
