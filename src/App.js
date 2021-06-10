@@ -153,7 +153,7 @@ function App() {
       </div>
       
       <div className="buttons">
-      <Button variant="secondary" onClick={() => setToggle(true)}>Autogenerate questions</Button>
+      <Button variant="secondary" onClick={() => setToggle(true)}>Rapid fire questions</Button>
       <Button variant="light" onClick={() => setToggleQuestionInput(true)}>Add my own questions</Button>
       </div>
       </div>
