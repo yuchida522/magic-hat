@@ -19,9 +19,13 @@ Want more questions in the bank? Create and all your own by clicking "Add my own
 ## Set Up
 
 To run locally:
-1. Install Node.js (version 14 or earlier)
-2. Clone this repository
-3. Install the dependencies:
+1. Install Node.js (must be between version 10 - 14)
+2. Install yarn 
+```
+$ npm install --global yarn
+```
+3. Clone this repository
+4. Istall the dependencies:
 ```
 $ yarn install
 ```
