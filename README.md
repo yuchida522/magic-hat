@@ -25,7 +25,7 @@ To run locally:
 $ npm install --global yarn
 ```
 3. Clone this repository
-4. Istall the dependencies:
+4. Install the dependencies:
 ```
 $ yarn install
 ```
